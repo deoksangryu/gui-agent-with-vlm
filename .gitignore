@@ -297,10 +297,9 @@ Desktop.ini
 *.parquet
 *.feather
 
-# Images and media
+# Images and media (except demo results)
 *.jpg
 *.jpeg
-*.png
 *.gif
 *.bmp
 *.tiff
@@ -311,6 +310,10 @@ Desktop.ini
 *.wmv
 *.flv
 *.mkv
+
+# Allow demo result images
+!showui/showui_result_1753354654.png
+!omniparser/youtube_test_labeled.png
 
 # Audio files
 *.mp3

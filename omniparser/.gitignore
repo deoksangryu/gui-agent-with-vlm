@@ -1,0 +1,67 @@
+# Model weights and large files
+weights/icon_caption_blip2
+weights/icon_caption_florence
+weights/icon_detect/
+weights/icon_detect_v1_5/
+weights/icon_detect_v1_5_2/
+weights/icon_caption_florence_v2/
+
+# Large image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.webp
+
+# Model files
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.ckpt
+
+# Gradio cache
+.gradio
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Jupyter notebooks
+debug.ipynb
+*.ipynb_checkpoints/
+
+# Logs
+wget-log
+*.log
+
+# Uploads
+omnitool/gradio/uploads/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.venv/
+venv/
+env/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
