@@ -313,7 +313,9 @@ Desktop.ini
 
 # Allow demo result images
 !showui/showui_result_1753354654.png
+!showui/showui_result_1753354654_resized.png
 !omniparser/youtube_test_labeled.png
+!omniparser/youtube_test_labeled_resized.png
 
 # Audio files
 *.mp3

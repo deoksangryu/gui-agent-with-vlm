@@ -12,7 +12,7 @@ This portfolio showcases AI GUI Agent development projects for computer usage. T
 **ShowUI** is an open-source, end-to-end, lightweight vision-language-action model designed for GUI visual agents. It is specifically tailored for AI agent development for computer usage.
 
 ### Demo Results
-![ShowUI Result](showui/showui_result_1753354654.png)
+![ShowUI Result](showui/showui_result_1753354654_resized.png)
 *ShowUI analysis result showing GUI element detection and coordinate generation*
 
 ### Key Features
@@ -55,8 +55,10 @@ This portfolio showcases AI GUI Agent development projects for computer usage. T
 **OmniParser** is a comprehensive method for parsing user interface screenshots into structured and easy-to-understand elements. It significantly enhances GPT-4V's ability to generate actions that can be accurately grounded in corresponding interface regions.
 
 ### Demo Results
-![OmniParser Result](omniparser/youtube_test_labeled.png)
+![OmniParser Result](omniparser/youtube_test_labeled_resized.png)
 *OmniParser v2 analysis result showing UI element detection and functional descriptions*
+
+**Note**: If the image above doesn't display properly, you can view the demo result directly in the [omniparser/youtube_test_labeled_resized.png](omniparser/youtube_test_labeled_resized.png) file.
 
 ### Key Features
 - **Pure Vision-based**: Uses only visual information without text-based approaches
