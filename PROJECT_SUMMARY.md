@@ -17,7 +17,7 @@ This repository integrates multiple AI GUI Agent projects into a comprehensive p
   - API service and Gradio interface
 - **Achievements**: CVPR 2025 acceptance, NeurIPS 2024 outstanding paper award
 
-### 2. OmniParser v2
+### 2. OmniParser v2 (Complete Implementation)
 **Location**: `omniparser/`
 - **Type**: Screen Parsing Tool
 - **Purpose**: Pure vision-based UI element detection and description
@@ -26,6 +26,14 @@ This repository integrates multiple AI GUI Agent projects into a comprehensive p
   - BLIP2/Florence2 caption models
   - OCR integration (EasyOCR, PaddleOCR)
   - Interaction possibility prediction
+  - Step-by-step demo scripts
+  - OmniTool integration for Windows VM control
+- **Components**:
+  - `util/`: Core utility functions (utils.py, box_annotator.py, omniparser.py)
+  - `steps/`: Step-by-step demo scripts for different use cases
+  - `omnitool/`: Windows VM control integration
+  - `eval/`: Evaluation scripts and benchmarks
+  - `docs/`: Documentation and guides
 - **Achievements**: Screen Spot Pro benchmark SOTA (39.5%), #1 trending on Hugging Face
 
 ### 3. Angular Chatbot Application
@@ -81,11 +89,27 @@ gui-agent-with-vlm/
 │   ├── training/              # Training scripts
 │   ├── inference/             # Inference and API
 │   └── docs/                  # Documentation
-├── omniparser/                # OmniParser v2 screen parsing
-│   ├── detection/             # YOLO-based detection
-│   ├── captioning/            # Vision-language models
-│   ├── utils/                 # Utility functions
-│   └── demo/                  # Demo applications
+├── omniparser/                # OmniParser v2 screen parsing (Complete)
+│   ├── util/                  # Core utility functions
+│   │   ├── utils.py          # Main utility functions
+│   │   ├── box_annotator.py  # Bounding box annotation
+│   │   └── omniparser.py     # OmniParser core
+│   ├── steps/                 # Step-by-step demos
+│   │   ├── step1_basic_demo.py
+│   │   ├── step2_toss_initial_attempt.py
+│   │   ├── step3_korean_ocr_support.py
+│   │   ├── step4_improved_ocr_sensitivity.py
+│   │   ├── step5_blip2_model_switch.py
+│   │   └── step6_final_summary.py
+│   ├── omnitool/             # Windows VM control
+│   │   ├── gradio/           # Gradio interface
+│   │   ├── omnibox/          # VM management
+│   │   └── omniparserserver/ # Server components
+│   ├── eval/                 # Evaluation scripts
+│   ├── docs/                 # Documentation
+│   ├── imgs/                 # Example images
+│   ├── omniparser_demo.py    # Main demo script
+│   └── gradio_demo.py        # Gradio demo
 ├── angular-chatbot/           # Angular chatbot application
 │   ├── src/                   # Source code
 │   ├── components/            # Angular components
@@ -111,6 +135,7 @@ gui-agent-with-vlm/
 - **Lightweight VLA Model**: ShowUI's efficient 2B parameter design
 - **Multi-model Integration**: Support for various latest models
 - **Real-time Processing**: High-speed inference capabilities
+- **Complete Implementation**: Full OmniParser v2 codebase with 93 files
 
 ### Community Impact
 - **Hugging Face #1 Trending**: OmniParser model popularity
