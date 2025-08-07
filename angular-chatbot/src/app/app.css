@@ -1,0 +1,216 @@
+/* 전체 앱 컨테이너 레이아웃 */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+/* 채팅 스크롤 영역 */
+.chat-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  background: linear-gradient(135deg, #f8f9ff, #ffffff);
+}
+
+/* 입력 영역 하단 고정 */
+.input-fixed-bottom {
+  flex-shrink: 0;
+  background: white;
+  border-top: 1px solid #e0e6ed;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ShowUI 분석 시작 버튼 컨테이너 */
+.analysis-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  background: linear-gradient(135deg, #f8f9ff, #e6ebff);
+  border: 2px solid rgb(31, 76, 242);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(31, 76, 242, 0.15);
+  animation: fadeInScale 0.3s ease-out;
+}
+
+/* 분석 시작 버튼 */
+.analysis-start-btn {
+  background: linear-gradient(135deg, rgb(31, 76, 242), #4a90e2);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(31, 76, 242, 0.3);
+  min-width: 200px;
+}
+
+.analysis-start-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1a4de8, #3a7bc8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(31, 76, 242, 0.4);
+}
+
+.analysis-start-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(31, 76, 242, 0.3);
+}
+
+.analysis-start-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 도움말 텍스트 */
+.analysis-help-text {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+}
+
+/* 버튼 컨테이너 애니메이션 */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 모달 스타일 */
+.info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-title {
+  margin: 0 0 20px 0;
+  color: rgb(31, 76, 242);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-text {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.modal-actions {
+  text-align: right;
+}
+
+.modal-btn {
+  background: rgb(31, 76, 242);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.modal-btn:hover {
+  background: #1a4de8;
+}
+
+/* 포커스 변경 관련 버튼 스타일 */
+.focus-action-buttons {
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.immediate-click-btn {
+  background: #1f4cf2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  font-size: 14px;
+}
+
+.immediate-click-btn:hover {
+  background: #0d3ad6;
+}
+
+.cancel-click-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  font-size: 14px;
+}
+
+.cancel-click-btn:hover {
+  background: #c82333;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .analysis-button-container {
+    margin: 10px;
+    padding: 15px;
+    max-width: none;
+  }
+  
+  .analysis-start-btn {
+    min-width: 180px;
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+  
+  .focus-action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .immediate-click-btn,
+  .cancel-click-btn {
+    width: 100%;
+    padding: 10px 16px;
+  }
+}

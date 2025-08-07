@@ -1,0 +1,36 @@
+<!--
+  메시지 입력 컴포넌트 템플릿
+  텍스트 영역과 전송 버튼으로 구성
+-->
+
+<div class="input-container">
+  <div class="input-wrapper">
+    <!-- 메시지 입력 텍스트 영역 -->
+    <textarea 
+      #messageTextarea
+      class="input-box"
+      [(ngModel)]="messageContent"
+      (keydown)="onKeyDown($event)"
+      placeholder="메시지를 입력하세요..."
+      rows="1"
+      [disabled]="isLoading"
+      aria-label="메시지 입력"
+      maxlength="2000">
+    </textarea>
+    
+    <!-- 전송 버튼 -->
+    <button 
+      class="send-btn" 
+      type="button"
+      (click)="onSendClick()"
+      [disabled]="!canSend"
+      title="메시지 전송 (Enter)"
+      aria-label="메시지 전송">
+      
+      <!-- 전송 아이콘 (SVG) -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+      </svg>
+    </button>
+  </div>
+</div>

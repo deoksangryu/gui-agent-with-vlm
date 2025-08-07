@@ -1,0 +1,32 @@
+<!--
+  헤더 컴포넌트 템플릿
+  로고와 스크린샷 버튼으로 구성
+-->
+
+<div class="header">
+  <!-- 애플리케이션 로고 -->
+  <div class="logo">자동화 챗봇</div>
+  
+  <!-- 컨트롤 버튼들 -->
+  <div class="header-controls">
+    <!-- 서버 스크린샷 토글 버튼 -->
+    <button 
+      class="server-toggle-btn" 
+      [class.server-active]="isServerMode()"
+      [class.client-active]="!isServerMode()"
+      type="button"
+      (click)="onServerToggleClick()"
+      title="서버 또는 클라이언트 스크린샷 모드를 전환합니다">
+      {{ getServerToggleText() }}
+    </button>
+    
+    <!-- ShowUI 스크린샷 분석 버튼 -->
+    <button 
+      class="showui-btn" 
+      type="button"
+      (click)="onShowUIScreenshotClick()"
+      title="화면을 캡처하여 UI 요소를 찾습니다">
+      🎯 UI 찾기
+    </button>
+  </div>
+</div>

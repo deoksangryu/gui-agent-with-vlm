@@ -1,0 +1,131 @@
+/* 헤더 컨테이너 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* 로고 스타일 */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f4cf2;
+  user-select: none;
+}
+
+/* 헤더 컨트롤 영역 */
+.header-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ShowUI 버튼 스타일 */
+.showui-btn {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.2);
+}
+
+.showui-btn:hover {
+  background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
+}
+
+.showui-btn:active {
+  transform: translateY(0);
+}
+
+/* 서버 토글 버튼 스타일 */
+.server-toggle-btn {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+}
+
+.server-toggle-btn:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(245, 158, 11, 0.3);
+}
+
+.server-toggle-btn:active {
+  transform: translateY(0);
+}
+
+/* 스크린샷 버튼 스타일 (미래 사용) */
+.screenshot-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.screenshot-btn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.screenshot-btn:active {
+  transform: translateY(0);
+}
+
+/* 모바일 대응 */
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .header-controls {
+    gap: 8px;
+  }
+
+  .showui-btn,
+  .screenshot-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .server-toggle-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}

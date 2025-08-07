@@ -1,0 +1,47 @@
+<!--
+  채팅 메시지 컴포넌트 템플릿
+  메시지 목록 표시 및 빈 상태, 로딩 상태 처리
+  새로운 스크롤 레이아웃에 맞게 구조 조정
+-->
+
+<div class="chat-messages" #messagesContainer>
+  <!-- 빈 상태: 메시지가 없을 때 표시 -->
+  <div *ngIf="isEmpty && !isLoading" class="empty-state">
+    <div class="empty-icon">🤖</div>
+    <h3>안녕하세요!</h3>
+    <p>무엇을 도와드릴까요?</p>
+  </div>
+
+  <!-- 메시지 목록: 기존 메시지들을 표시 -->
+  <div 
+    *ngFor="let message of messages; trackBy: trackByMessageId" 
+    class="message"
+    [ngClass]="{'user': message.isUser, 'assistant': !message.isUser}">
+    
+    <!-- 메시지 아바타 -->
+    <div class="message-avatar">
+      {{ message.isUser ? 'U' : 'AI' }}
+    </div>
+    
+    <!-- 메시지 내용 -->
+    <div class="message-content">
+      {{ message.content }}
+    </div>
+  </div>
+
+  <!-- 로딩 상태: AI 응답 대기 중일 때 표시 -->
+  <div *ngIf="isLoading" class="loading-message">
+    <div class="message-avatar">AI</div>
+    <div class="loading-content">
+      <div class="typing-indicator">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      </div>
+      <span>응답 중...</span>
+    </div>
+  </div>
+
+  <!-- 스크롤 여백 (마지막 메시지 아래 여백) -->
+  <div class="scroll-spacer"></div>
+</div>

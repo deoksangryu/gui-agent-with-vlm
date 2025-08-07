@@ -1,0 +1,57 @@
+<!--
+  메인 챗봇 애플리케이션 레이아웃
+  헤더, 채팅 메시지 영역, 입력 영역으로 구성
+  메시지 입력 영역을 하단에 고정하고 채팅 영역에 스크롤 적용
+-->
+
+<!-- 전체 앱 컨테이너 -->
+<div class="app-container">
+  <!-- 헤더 컴포넌트 -->
+  <app-header 
+    (showUIScreenshotRequested)="handleShowUIScreenshotRequest()"
+    (serverToggleRequested)="toggleServerScreenshot()">
+  </app-header>
+
+  <!-- 채팅 영역 (스크롤 가능) -->
+  <div class="chat-scroll-area">
+    <!-- 채팅 메시지 영역 -->
+    <app-chat-messages 
+      [messages]="messages" 
+      [isLoading]="isLoading">
+    </app-chat-messages>
+    
+
+  </div>
+
+  <!-- 메시지 입력 영역 (하단 고정) -->
+  <div class="input-fixed-bottom">
+    <app-message-input 
+      [isLoading]="isLoading"
+      (messageSubmitted)="handleMessageSubmit($event)">
+    </app-message-input>
+  </div>
+</div>
+
+<!-- ShowUI 화면 캡처 분석 (별도 패널 없이 메시지로 처리) -->
+
+<!-- 스크린샷 정보 모달 (조건부 렌더링) -->
+<div *ngIf="showModal" class="info-modal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3 class="modal-title">{{ modalTitle }}</h3>
+    <div class="modal-text" [innerHTML]="modalContent"></div>
+    <div class="modal-actions">
+      <button class="modal-btn" (click)="closeModal()">확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />
